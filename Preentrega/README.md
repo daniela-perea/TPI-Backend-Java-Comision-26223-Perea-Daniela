@@ -82,15 +82,20 @@ src/com/techlab/articulo/
 - **Paquetes:** com.techlab.articulo, .interfaces, .model, .menu, .repository y .util.
 
 ### Cómo compilar y ejecutar
+```
+code
 Requiere JDK 17 o superior. Desde la carpeta preentrega/:
 mkdir out
 javac -encoding UTF-8 -d out $(find src -name "*.java")
 java -Dfile.encoding=UTF-8 -cp out com.techlab.articulo.App
+```
 
 En Windows (PowerShell):
+```
 mkdir out
 javac -encoding UTF-8 -d out (Get-ChildItem -Recurse src -Filter *.java).FullName
 java -Dfile.encoding=UTF-8 -cp out com.techlab.articulo.App
+```
 
 ## Herramientas utilizadas
 - Lenguaje: Java Standard Edition
