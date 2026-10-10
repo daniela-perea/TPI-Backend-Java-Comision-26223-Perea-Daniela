@@ -24,28 +24,36 @@ En el contexto operativo de TechLab, la precisión en la trazabilidad de product
 
 ## Estructura
 ```text
-techlab/
-├── preentrega/                         # Código fuente de la primera etapa evaluativa
-│   └── src/com/techlab/
-│       ├── App.java                    # Punto de entrada y menú por consola
-│       ├── productos/                  # Modelo de dominio del catálogo
-│       │   ├── Producto.java
-│       │   ├── Bebida.java
-│       │   └── Comida.java
-│       ├── pedidos/                    # Modelo de dominio de compras
-│       │   ├── Pedido.java
-│       │   └── DetallePedido.java
-│       ├── servicios/                  # Capa de lógica de negocio
-│       │   ├── GestorProducto.java
-│       │   └── GestorPedido.java
-│       └── excepciones/                # Excepciones de negocio personalizadas
-│           ├── StockInsuficienteException.java
-│           └── ProductoNoEncontradoException.java
+├── Preentrega/                              # Código fuente de la primera etapa evaluativa
+│   └── src/com/techlab/articulo/
+│       ├── App.java                         # Punto de entrada y menú principal por consola
+│       │
+│       ├── interfaces/                      # Contratos que cumplen las clases del modelo
+│       │   ├── Calculable.java              # Cálculo del precio final (con IVA)
+│       │   └── Identificable.java           # Objetos identificables por código
+│       │
+│       ├── model/                           # Modelo de dominio del catálogo
+│       │   ├── Articulo.java                # Clase abstracta padre de los artículos
+│       │   ├── ArticuloElectronico.java     # Agrega garantía en meses
+│       │   ├── ArticuloAlimenticio.java     # Agrega días para el vencimiento
+│       │   ├── ArticuloLimpieza.java        # Agrega contenido en mililitros
+│       │   └── Categoria.java               # Categoría precargada de los artículos
+│       │
+│       ├── menu/                            # Interacción con el usuario por consola
+│       │   ├── Menu.java                    # Clase abstracta: ciclo común de los menús
+│       │   ├── MenuArticulos.java           # Alta, listado, consulta, modificación y baja
+│       │   └── MenuCategorias.java          # Listado de categorías
+│       │
+│       ├── repository/                      # Almacenamiento de objetos en memoria
+│       │   └── Repositorio.java             # Genérico: Repositorio<T extends Identificable>
+│       │
+│       └── util/                            # Utilidades de apoyo
+│           └── Entrada.java                 # Lectura y validación de datos por teclado
 │
-├── entrega/                            # Módulo destinado al Trabajo Final Integrador (TFI)
-│   └── README.md                       # Espacio reservado para las funcionalidades finales
+├── EntregaFinal/                                 # Módulo destinado al Trabajo Final Integrador (TFI)
+│   └── README.md                            # Espacio reservado para las funcionalidades finales
 │
-└── README.md                           # Documentación general del repositorio
+└── README.md                                # Documentación general del repositorio
 ```
 
 ## Herramientas utilizadas
